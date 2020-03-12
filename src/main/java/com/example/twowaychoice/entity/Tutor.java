@@ -28,4 +28,6 @@ public class Tutor implements Serializable {
     private List<AT> ats;
     @OneToMany(mappedBy = "tutor")
     private List<Student> students;
+    @OneToMany(mappedBy = "tutor")
+    private List<Course> courses;
 }

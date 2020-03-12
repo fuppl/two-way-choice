@@ -23,6 +23,8 @@ public class Course implements Serializable {
     private Float LINE;
     //权重
     private Float WEIGHT;
+    @ManyToOne
+    private Tutor tutor;
     @OneToMany(mappedBy = "course")
     private List<SC> scs;
 }
