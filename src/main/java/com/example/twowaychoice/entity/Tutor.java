@@ -23,7 +23,7 @@ public class Tutor implements Serializable {
     private Integer RECEIVABLE;
     //已经选择的人数
     private Integer chosen;
-    //可选择的人数
+    //可选择的范围
     private Integer OPTIONAL;
     @OneToMany(mappedBy = "tutor")
     private List<AT> ats;
