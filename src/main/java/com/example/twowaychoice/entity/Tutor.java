@@ -18,6 +18,7 @@ public class Tutor implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
+    private String password;
     //老师可以接收的人数
     private Integer RECEIVABLE;
     //已经选择的人数

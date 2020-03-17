@@ -14,7 +14,6 @@ import java.io.Serializable;
 @Data
 public class SA implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     @ManyToOne
     private Student student;

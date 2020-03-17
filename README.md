@@ -16,4 +16,9 @@
 ## 2020.03.12
 第一次实体类书写完成
 ![entity01](image/entity0103.png)
+
+## 2020.03.17
+修改实体类
+Tutor添加password属性，Student id属性去掉自增长;
+编写基本repository接口
     
