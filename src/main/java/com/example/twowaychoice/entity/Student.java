@@ -5,6 +5,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.time.LocalDateTime;
 import java.util.List;
 
 /**
@@ -23,4 +24,13 @@ public class Student implements Serializable {
     private List<SA> sas;
     @OneToMany(mappedBy = "student")
     private List<SC> scs;
+    @Column(columnDefinition = "timestamp default current_timestamp",
+            insertable = false,
+            updatable = false)
+    private LocalDateTime insertTime;
+    @Column(columnDefinition = "timestamp default current_timestamp " +
+            "on update current_timestamp",
+            insertable = false,
+            updatable = false)
+    private LocalDateTime updateTime;
 }
