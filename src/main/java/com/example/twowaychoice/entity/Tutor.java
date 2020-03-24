@@ -26,8 +26,11 @@ public class Tutor implements Serializable {
     private Integer chosen;
     //可选择的范围
     private Integer OPTIONAL;
+
     @OneToMany(mappedBy = "tutor")
-    private List<AT> ats;
+    private List<Course> courses;
+    @OneToMany(mappedBy = "tutor")
+    private List<AreaTutor> areaTutors;
     @OneToMany(mappedBy = "tutor")
     private List<Student> students;
     @Column(columnDefinition = "timestamp default current_timestamp",

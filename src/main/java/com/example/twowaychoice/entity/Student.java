@@ -21,9 +21,9 @@ public class Student implements Serializable {
     @ManyToOne
     private Tutor tutor;
     @OneToMany(mappedBy = "student")
-    private List<SA> sas;
+    private List<AreaStudent> areaStudents;
     @OneToMany(mappedBy = "student")
-    private List<SC> scs;
+    private List<CourseStudent> courseStudents;
     @Column(columnDefinition = "timestamp default current_timestamp",
             insertable = false,
             updatable = false)

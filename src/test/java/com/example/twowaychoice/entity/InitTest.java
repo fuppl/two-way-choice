@@ -16,13 +16,13 @@ public class InitTest  {
     @Autowired
     private AreaRepository areaRepository;
     @Autowired
-    private ATRepository atRepository;
+    private AreaTutorRepository areaTutorRepository;
     @Autowired
     private CourseRepository courseRepository;
     @Autowired
-    private SARepository saRepository;
+    private AreaStudentRepository areaStudentRepository;
     @Autowired
-    private SCRepository scRepository;
+    private CourseStudentRepository courseStudentRepository;
     @Autowired
     private StudentRepository studentRepository;
     @Autowired
@@ -51,22 +51,22 @@ public class InitTest  {
         area.setDetail("后端");
         areaRepository.save(area);
 
-        AT at = new AT();
-        at.setTutor(tutor);
-        at.setArea(area);
-        at.setWEIGHT(1F);
-        atRepository.save(at);
+        AreaTutor areaTutor = new AreaTutor();
+        areaTutor.setTutor(tutor);
+        areaTutor.setArea(area);
+        areaTutor.setWEIGHT(1F);
+        areaTutorRepository.save(areaTutor);
 
-        SA sa = new SA();
-        sa.setStudent(student);
-        sa.setArea(area);
-        saRepository.save(sa);
+        AreaStudent areaStudent = new AreaStudent();
+        areaStudent.setStudent(student);
+        areaStudent.setArea(area);
+        areaStudentRepository.save(areaStudent);
 
-        SC sc = new SC();
+        CourseStudent courseStudent = new CourseStudent();
 //        sc.setId(1);
-        sc.setStudent(student);
-        sc.setCourse(course);
-        sc.setScore(100F);
-        scRepository.save(sc);
+        courseStudent.setStudent(student);
+        courseStudent.setCourse(course);
+        courseStudent.setScore(100F);
+        courseStudentRepository.save(courseStudent);
     }
 }

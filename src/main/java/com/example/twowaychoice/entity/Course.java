@@ -4,7 +4,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import javax.persistence.criteria.CriteriaBuilder;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.List;
@@ -24,8 +23,10 @@ public class Course implements Serializable {
     private Float LINE;
     //权重
     private Float WEIGHT;
+    @ManyToOne
+    private Tutor tutor;
     @OneToMany(mappedBy = "course")
-    private List<SC> scs;
+    private List<CourseStudent> courseStudents;
     @Column(columnDefinition = "timestamp default current_timestamp",
             insertable = false,
             updatable = false)

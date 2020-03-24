@@ -20,9 +20,9 @@ public class Area implements Serializable {
     private Integer id;
     private String detail;
     @OneToMany(mappedBy = "area")
-    private List<AT> ats;
+    private List<AreaTutor> areaTutors;
     @OneToMany(mappedBy = "area")
-    private List<SA> sas;
+    private List<AreaStudent> areaStudents;
     @Column(columnDefinition = "timestamp default current_timestamp",
             insertable = false,
             updatable = false)

@@ -8,19 +8,21 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 
 /**
- * 学生与课设方向实体类
+ * 导师与课设方向的中间类，由老师来设计每个课设方向所占的权重
  */
 @Entity
 @NoArgsConstructor
 @Data
-public class SA implements Serializable {
+public class AreaTutor implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    @ManyToOne
-    private Student student;
+    //权重
+    private Float WEIGHT;
     @ManyToOne
     private Area area;
+    @ManyToOne
+    private Tutor tutor;
     @Column(columnDefinition = "timestamp default current_timestamp",
             insertable = false,
             updatable = false)
