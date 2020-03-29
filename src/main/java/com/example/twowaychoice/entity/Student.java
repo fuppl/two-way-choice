@@ -20,9 +20,9 @@ public class Student implements Serializable {
     private String name;
     @ManyToOne
     private Tutor tutor;
-    @OneToMany(mappedBy = "student")
+    @OneToMany(mappedBy = "student", cascade = CascadeType.REMOVE)
     private List<AreaStudent> areaStudents;
-    @OneToMany(mappedBy = "student")
+    @OneToMany(mappedBy = "student", cascade = CascadeType.REMOVE)
     private List<CourseStudent> courseStudents;
     @Column(columnDefinition = "timestamp default current_timestamp",
             insertable = false,

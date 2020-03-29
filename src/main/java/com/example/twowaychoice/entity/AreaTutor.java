@@ -18,7 +18,7 @@ public class AreaTutor implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     //权重
-    private Float WEIGHT;
+//    private Float WEIGHT;
     @ManyToOne
     private Area area;
     @ManyToOne

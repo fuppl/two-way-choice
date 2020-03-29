@@ -27,9 +27,9 @@ public class Tutor implements Serializable {
     //可选择的范围
     private Integer OPTIONAL;
 
-    @OneToMany(mappedBy = "tutor")
+    @OneToMany(mappedBy = "tutor",  fetch = FetchType.EAGER, cascade = CascadeType.REMOVE) //todo 强制为饿汉
     private List<Course> courses;
-    @OneToMany(mappedBy = "tutor")
+    @OneToMany(mappedBy = "tutor",cascade = CascadeType.REMOVE)
     private List<AreaTutor> areaTutors;
     @OneToMany(mappedBy = "tutor")
     private List<Student> students;

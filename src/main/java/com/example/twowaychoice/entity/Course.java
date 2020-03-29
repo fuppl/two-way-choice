@@ -25,7 +25,7 @@ public class Course implements Serializable {
     private Float WEIGHT;
     @ManyToOne
     private Tutor tutor;
-    @OneToMany(mappedBy = "course")
+    @OneToMany(mappedBy = "course", cascade = CascadeType.REMOVE)
     private List<CourseStudent> courseStudents;
     @Column(columnDefinition = "timestamp default current_timestamp",
             insertable = false,

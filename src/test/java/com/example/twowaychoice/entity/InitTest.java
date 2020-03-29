@@ -34,6 +34,7 @@ public class InitTest  {
         tutor.setName("lalala");
         tutor.setPassword("123456");
         tutor.setOPTIONAL(60);
+        tutor.setChosen(0);
         tutor.setRECEIVABLE(10);
         tutorRepository.save(tutor);
 
@@ -54,7 +55,7 @@ public class InitTest  {
         AreaTutor areaTutor = new AreaTutor();
         areaTutor.setTutor(tutor);
         areaTutor.setArea(area);
-        areaTutor.setWEIGHT(1F);
+
         areaTutorRepository.save(areaTutor);
 
         AreaStudent areaStudent = new AreaStudent();
@@ -63,7 +64,6 @@ public class InitTest  {
         areaStudentRepository.save(areaStudent);
 
         CourseStudent courseStudent = new CourseStudent();
-//        sc.setId(1);
         courseStudent.setStudent(student);
         courseStudent.setCourse(course);
         courseStudent.setScore(100F);

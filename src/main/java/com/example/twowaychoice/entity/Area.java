@@ -19,9 +19,9 @@ public class Area implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String detail;
-    @OneToMany(mappedBy = "area")
+    @OneToMany(mappedBy = "area", cascade = CascadeType.REMOVE)
     private List<AreaTutor> areaTutors;
-    @OneToMany(mappedBy = "area")
+    @OneToMany(mappedBy = "area", cascade = CascadeType.REMOVE)
     private List<AreaStudent> areaStudents;
     @Column(columnDefinition = "timestamp default current_timestamp",
             insertable = false,
