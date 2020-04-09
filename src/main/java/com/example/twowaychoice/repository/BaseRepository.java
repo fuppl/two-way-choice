@@ -10,5 +10,5 @@ import org.springframework.data.repository.NoRepositoryBean;
  */
 @NoRepositoryBean//防止spring自动创建对象
 public interface BaseRepository<T, ID> extends JpaRepository<T, ID> {
-    void refresh(T t);
+    T refresh(T t);
 }

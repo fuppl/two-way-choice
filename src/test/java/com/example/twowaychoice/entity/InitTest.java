@@ -5,6 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -27,25 +28,33 @@ public class InitTest  {
     private StudentRepository studentRepository;
     @Autowired
     private TutorRepository tutorRepository;
+    @Autowired
+    private PasswordEncoder encoder;
 
     @Test
     public void test_init(){
         Tutor tutor = new Tutor();
+        tutor.setTutorNumber(1003);
         tutor.setName("lalala");
         tutor.setPassword("123456");
         tutor.setOPTIONAL(60);
         tutor.setChosen(0);
         tutor.setRECEIVABLE(10);
+        tutor.setRole(Role.TUTOR);
+
         tutorRepository.save(tutor);
 
         Student student = new Student();
-        student.setId(2017214239);
+        student.setStudentNumber(2017214239);
+        student.setName("李景阳");
+        student.setRole(Role.STUDENT);
         studentRepository.save(student);
 
         Course course = new Course();
         course.setName("web框架");
         course.setLINE(60F);
         course.setWEIGHT(1F);
+        course.setTutor(tutor);
         courseRepository.save(course);
 
         Area area = new Area();

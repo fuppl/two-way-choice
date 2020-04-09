@@ -1,0 +1,49 @@
+PATCH http://localhost:8080/api/student/student
+Authorization: d6dff7bce8acdf72bde690c2060a649e3acb1c0da3388e3a8f74bb1f4dca51eb47761b33637c74757d059bbcc5b01cd2
+Content-Type: application/json
+
+{
+  "tutorId": 6
+}
+
+###
+POST http://localhost:8080/api/student/areaStudent
+Authorization: d6dff7bce8acdf72bde690c2060a649e3acb1c0da3388e3a8f74bb1f4dca51eb47761b33637c74757d059bbcc5b01cd2
+Content-Type: application/json
+
+{
+  "areas": [1,2,3,4]
+}
+
+###
+
+GET http://localhost:8080/api/student/index
+Authorization: ab1669b671aab8b56ade6c4154ed71ac167579c25975d13d8e9692d7e7b98477591cf2de903a3ddd3031da7442640a3f
+Accept: application/json
+
+###
+
+### 学生登录
+
+POST http://localhost:8080/api/studentLogin
+Content-Type: application/json
+
+{
+  "studentNumber": 2017214239
+}
+
+### 学生登录
+
+POST http://localhost:8080/api/studentLogin
+Content-Type: application/json
+
+{
+  "studentNumber": 2017214242
+}
+### 1
+Authorization: ab1669b671aab8b56ade6c4154ed71ac167579c25975d13d8e9692d7e7b98477591cf2de903a3ddd3031da7442640a3f
+
+### 6
+Authorization: d6dff7bce8acdf72bde690c2060a649e3acb1c0da3388e3a8f74bb1f4dca51eb47761b33637c74757d059bbcc5b01cd2
+
+###

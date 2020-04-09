@@ -1,12 +1,9 @@
 package com.example.twowaychoice.repository;
 
 import com.example.twowaychoice.entity.Tutor;
-import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
-
-import java.util.Optional;
 
 @Repository
 public interface TutorRepository extends BaseRepository<Tutor,Integer> {
@@ -24,4 +21,6 @@ public interface TutorRepository extends BaseRepository<Tutor,Integer> {
 //    @Modifying
 //    @Query("update Tutor t set t=:newTutor where t.id=:tutorId")
 //    int updateById(@Param("newTutor") Tutor newTutor, @Param("tutorId") Integer tutorId);
+    @Query("from Tutor t where t.tutorNumber = :tnum")
+    public Tutor findByTutorNumber(@Param("tnum") Integer tnum);
 }

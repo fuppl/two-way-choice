@@ -1,8 +1,180 @@
-GET http://localhost:8080/api/tutor/updatePwd/456789/3
+
+GET http://localhost:8080/api/tutor/students/7
+Authorization: 97be3949054a0e14f7d9e05c15499aabac2bdb11a55d0843da7dabc80ed389897d35ef122469f254a3dfa8b02c48f645
 Accept: application/json
 
 ###
-GET http://localhost:8080/api/tutor/getAreas/1
+PATCH http://localhost:8080/api/tutor/student/7
+Authorization: 97be3949054a0e14f7d9e05c15499aabac2bdb11a55d0843da7dabc80ed389897d35ef122469f254a3dfa8b02c48f645
+Content-Type: application/json
+
+{
+  "studentNumber": 2017214222,
+  "name": "唐老鸭"
+}
+
+###
+POST http://localhost:8080/api/tutor/student
+Authorization: 97be3949054a0e14f7d9e05c15499aabac2bdb11a55d0843da7dabc80ed389897d35ef122469f254a3dfa8b02c48f645
+Content-Type: application/json
+
+{
+  "studentNumber": 2017214225,
+  "name": "米妮"
+}
+
+###
+GET http://localhost:8080/api/tutor/courses/1
+Authorization: 97be3949054a0e14f7d9e05c15499aabac2bdb11a55d0843da7dabc80ed389897d35ef122469f254a3dfa8b02c48f645
 Accept: application/json
 
 ###
+
+GET http://localhost:8080/api/tutor/courses
+Authorization: 97be3949054a0e14f7d9e05c15499aabac2bdb11a55d0843da7dabc80ed389897d35ef122469f254a3dfa8b02c48f645
+Accept: application/json
+
+###
+PATCH http://localhost:8080/api/tutor/course
+Authorization: 97be3949054a0e14f7d9e05c15499aabac2bdb11a55d0843da7dabc80ed389897d35ef122469f254a3dfa8b02c48f645
+Content-Type: application/json
+
+{
+  "id": 1,
+  "name": "web框架",
+  "line": 80,
+  "weight": 2
+}
+
+###
+POST http://localhost:8080/api/tutor/course
+Authorization: 97be3949054a0e14f7d9e05c15499aabac2bdb11a55d0843da7dabc80ed389897d35ef122469f254a3dfa8b02c48f645
+Content-Type: application/json
+
+{
+  "name": "java",
+  "weight": 8.5,
+  "line": 60
+}
+
+###
+GET http://localhost:8080/api/tutor/areas/1
+Authorization: 97be3949054a0e14f7d9e05c15499aabac2bdb11a55d0843da7dabc80ed389897d35ef122469f254a3dfa8b02c48f645
+Accept: application/json
+
+###
+GET http://localhost:8080/api/tutor/areas
+Authorization: 97be3949054a0e14f7d9e05c15499aabac2bdb11a55d0843da7dabc80ed389897d35ef122469f254a3dfa8b02c48f645
+Accept: application/json
+
+###
+POST http://localhost:8080/api/tutor/area
+Authorization: 97be3949054a0e14f7d9e05c15499aabac2bdb11a55d0843da7dabc80ed389897d35ef122469f254a3dfa8b02c48f645
+Content-Type: application/json
+
+{
+  "detail": "redis"
+}
+
+###
+PATCH http://localhost:8080/api/tutor/settings
+Authorization: 97be3949054a0e14f7d9e05c15499aabac2bdb11a55d0843da7dabc80ed389897d35ef122469f254a3dfa8b02c48f645
+Content-Type: application/json
+
+{
+  "tutorNumber": 1002,
+  "name": "米奇",
+  "receivable": 10,
+  "optional": 50
+}
+
+###
+PATCH http://localhost:8080/api/tutor/pwd
+Authorization: dde37577145c3d149df14cafdcb89beea0ba440e68a9ffe771bf21f203d783fdd3ec405242cc2995522a5b70dd9940ba
+Content-Type: application/json
+
+{
+  "newPwd":"1001"
+}
+
+###
+POST http://localhost:8080/api/tutor/student
+Authorization: 37535223d6c3e3954fef40a1aca251c900c6c67a06ce631787913303bddbbe74523c84ae86ee4f5799ba927aa5c69c2f
+Content-Type: application/json
+
+{
+  "name": "李景阳",
+  "studentNumber": 2017214240
+}
+
+###
+POST http://localhost:8080/api/tutor/unofficiallyStudent
+Authorization: 37535223d6c3e3954fef40a1aca251c900c6c67a06ce631787913303bddbbe74523c84ae86ee4f5799ba927aa5c69c2f
+Content-Type: application/json
+
+{
+  "studentName": "李景阳",
+  "studentNumber": 2017214239
+}
+
+###
+POST http://localhost:8080/api/tutor/tutor
+Authorization: 37535223d6c3e3954fef40a1aca251c900c6c67a06ce631787913303bddbbe74523c84ae86ee4f5799ba927aa5c69c2f
+Content-Type: application/json
+# 此处必须要小写
+
+{
+  "tutorNumber": 1004,
+  "name": "馒头",
+  "password": "123456",
+  "receivable": 10,
+  "optional": 50
+}
+
+###
+GET http://localhost:8080/api/tutor/index
+Authorization: 37535223d6c3e3954fef40a1aca251c900c6c67a06ce631787913303bddbbe74523c84ae86ee4f5799ba927aa5c69c2f
+Accept: application/json
+
+
+### 学生登录
+
+POST http://localhost:8080/api/studentLogin
+Content-Type: application/json
+
+{
+  "studentNumber": 2017214239
+}
+
+### 导师登录
+POST http://localhost:8080/api/tutorLogin
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+  "tutorNumber": 1001,
+  "password": "1001"
+}
+
+###
+POST http://localhost:8080/api/tutorLogin
+Content-Type: application/json
+
+{
+  "tutorNumber": 1002,
+  "password": "1002"
+}
+
+###
+
+> {% client.global.set("token", response.headers.valueOf("Authorization")); %}
+
+### 1001
+Authorization: 530ea1c05790789dba8981566ad79063b3bb5bd7bc75d4eb6473a78c6223ab05d806e4047646b77149f096f55e2084b5
+
+### 1002
+Authorization: 97be3949054a0e14f7d9e05c15499aabac2bdb11a55d0843da7dabc80ed389897d35ef122469f254a3dfa8b02c48f645
+
+###
+
+

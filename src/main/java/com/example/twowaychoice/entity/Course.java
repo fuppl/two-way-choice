@@ -1,5 +1,6 @@
 package com.example.twowaychoice.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -14,6 +15,7 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @Entity
+@JsonIgnoreProperties("courseStudents")
 public class Course implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,8 +27,10 @@ public class Course implements Serializable {
     private Float WEIGHT;
     @ManyToOne
     private Tutor tutor;
+
     @OneToMany(mappedBy = "course", cascade = CascadeType.REMOVE)
     private List<CourseStudent> courseStudents;
+
     @Column(columnDefinition = "timestamp default current_timestamp",
             insertable = false,
             updatable = false)
